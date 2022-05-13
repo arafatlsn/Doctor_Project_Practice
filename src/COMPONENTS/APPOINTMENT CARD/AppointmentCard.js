@@ -1,17 +1,16 @@
 import React from 'react';
 
-const AppointmentCard = () => {
+const AppointmentCard = ({ elAppointments }) => {
+  const { name, time, spaces } = elAppointments;
   return (
     <div>
-      <div class="card w-96 bg-base-100 shadow-xl">
-        <figure class="px-10 pt-10">
-          <img src="https://api.lorem.space/image/shoes?w=400&h=225" alt="Shoes" class="rounded-xl" />
-        </figure>
-        <div class="card-body items-center text-center">
-          <h2 class="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div class="card-actions">
-            <button class="btn btn-primary">Buy Now</button>
+      <div className="card w-[425px] h-[230px] bg-base-100 shadow-xl">
+        <div className="card-body items-center text-center">
+          <h2 className="card-title text-secondary">{name}</h2>
+          <p className='m-0 p-0'>{time}</p>
+          <p className='m-0 p-0'>{spaces} Spaces Available</p>
+          <div className="card-actions">
+            <button className="btn bg-gradient-to-r from-secondary to-primary border-hidden text-white">Book Appointment</button>
           </div>
         </div>
       </div>
