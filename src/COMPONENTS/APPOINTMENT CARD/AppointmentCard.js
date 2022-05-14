@@ -1,6 +1,6 @@
-import React from 'react';
+import AppointmentModal from '../APPOINTMENT MODAL/AppointmentModal';
 
-const AppointmentCard = ({ elAppointments }) => {
+const AppointmentCard = ({ elAppointments, date, setModalDetail }) => {
   const { name, time, spaces } = elAppointments;
   return (
     <div>
@@ -10,7 +10,7 @@ const AppointmentCard = ({ elAppointments }) => {
           <p className='m-0 p-0'>{time}</p>
           <p className='m-0 p-0'>{spaces} Spaces Available</p>
           <div className="card-actions">
-            <button className="btn bg-gradient-to-r from-secondary to-primary border-hidden text-white">Book Appointment</button>
+            <label onClick={() => setModalDetail(elAppointments)} for="my-modal-3" class="btn modal-button bg-gradient-to-r from-secondary to-primary border-hidden text-white modal-button">BOOK APPOINTMENT</label>
           </div>
         </div>
       </div>

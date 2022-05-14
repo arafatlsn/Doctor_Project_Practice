@@ -6,7 +6,6 @@ import ThirdBanner from '../THIRD BANNER/ThirdBanner';
 const AppointmentPage = () => {
 
   const [selected, setSelected] = useState(new Date())
-  console.log(format(selected, 'PP'))
   return (
     <div>
       <ThirdBanner selected={selected} setSelected={setSelected}></ThirdBanner>
