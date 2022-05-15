@@ -9,8 +9,8 @@ const AppointmentCard = ({ elAppointments, date, setModalDetail }) => {
           <h2 className="card-title text-secondary">{name}</h2>
           <p className='m-0 p-0'>{time}</p>
           <p className='m-0 p-0'>{spaces} Spaces Available</p>
-          <div className="card-actions">
-            <label onClick={() => setModalDetail(elAppointments)} for="my-modal-3" class="btn modal-button bg-gradient-to-r from-secondary to-primary border-hidden text-white modal-button">BOOK APPOINTMENT</label>
+          <div className="card-actions" disabled >
+            <label disabled = {spaces === 0} onClick={() => setModalDetail(elAppointments)} htmlFor="my-modal-3" className="btn modal-button bg-gradient-to-r from-secondary to-primary border-hidden text-white modal-button">BOOK APPOINTMENT</label>
           </div>
         </div>
       </div>
