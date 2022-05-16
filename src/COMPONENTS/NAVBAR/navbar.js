@@ -1,9 +1,18 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import auth from '../FIREBASE/Firebase.init';
+import useFireBase from '../FIREBASE/useFireBase';
 
 const Navbar = () => {
 
   const [show, setShow] = useState(false);
+
+  const { user } = useFireBase();
+
+  const signoutUser = () => {
+    signOut(auth)
+  }
 
   const navOption = <>
   <li><Link to={'/'}>Home</Link></li>
@@ -11,7 +20,9 @@ const Navbar = () => {
   <li><Link to={'/appointment'}>Appointment</Link></li>
   <li><a>Reviews</a></li>
   <li><a>Contact</a></li>
-  <li><a>Login</a></li>
+  {
+    user ? <li onClick={signoutUser}><a>Logout</a></li> : <li><Link to={'/signin'}>Login</Link></li>
+  }
   </>
   return (
     <div>

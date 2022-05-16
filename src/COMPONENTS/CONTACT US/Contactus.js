@@ -6,7 +6,7 @@ const Contactus = () => {
     e.preventDefault();
   }
   return (
-    <div className='mt-[150px]' style={{backgroundImage: `url(${BG})`}}>
+    <div className='mt-[150px] lg:mb-[137px]' style={{backgroundImage: `url(${BG})`}}>
       <div>
         <div className='pt-[65px] pb-[60px]'>
           <h6 className='text-secondary text-center font-bold text-[20px]'>Contact Us</h6>

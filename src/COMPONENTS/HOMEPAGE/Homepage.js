@@ -7,6 +7,7 @@ import PatientSays from '../PATIENT SAYS/PatientSays';
 import Secondbanner from '../SECOND BANNER/Secondbanner';
 import ServicesCard from '../SERVICES CARD/ServicesCard';
 import Testimonial from '../TESTIMONIAL/Testimonial';
+import Footer from '../FOOTER/Footer'
 
 const Homepage = () => {
   return (
@@ -23,6 +24,7 @@ const Homepage = () => {
       <PatientSays></PatientSays>
       <Contactus></Contactus>
     </div>
+    <Footer></Footer>
     </div>
   );
 };

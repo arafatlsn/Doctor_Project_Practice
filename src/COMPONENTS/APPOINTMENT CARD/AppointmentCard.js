@@ -4,7 +4,7 @@ const AppointmentCard = ({ elAppointments, date, setModalDetail }) => {
   const { name, time, spaces } = elAppointments;
   return (
     <div>
-      <div className="card w-[425px] h-[230px] bg-base-100 shadow-xl">
+      <div className="card w-[95vw] mx-auto lg:w-[425px] h-[230px] bg-base-100 shadow-xl">
         <div className="card-body items-center text-center">
           <h2 className="card-title text-secondary">{name}</h2>
           <p className='m-0 p-0'>{time}</p>
