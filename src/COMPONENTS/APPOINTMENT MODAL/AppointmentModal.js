@@ -1,9 +1,11 @@
 import axios from 'axios';
 import { format } from 'date-fns';
 import React from 'react';
+import useFireBase from '../FIREBASE/useFireBase';
 
 const AppointmentModal = ({ elAppointments, date,  setModalDetail }) => {
   const {name, time} = elAppointments;
+  const { user } = useFireBase();
 
   const bookAppointment = e => {
     e.preventDefault();
@@ -41,9 +43,9 @@ const AppointmentModal = ({ elAppointments, date,  setModalDetail }) => {
           <form onSubmit={bookAppointment} className='flex flex-col gap-[23px]'>
             <input type="text" className='font-bold border mt-[47px] py-[.7rem] px-[1rem] rounded-xl focus:outline-none  bg-[#E6E6E6]' name='date' value={date} readOnly/>
             <input type="text" className='font-bold border py-[.7rem] px-[1rem] rounded-xl focus:outline-none bg-[#E6E6E6]' name='time' value={time} readOnly/>
-            <input type="text" className='font-bold border py-[.7rem] px-[1rem] rounded-xl focus:outline-none' placeholder='Full Name' name='fullName' required />
+            <input type="text" className='font-bold border py-[.7rem] px-[1rem] rounded-xl focus:outline-none' placeholder='Full Name' name='fullName' value={user && user.displayName} readOnly required />
             <input type="number" className='font-bold border py-[.7rem] px-[1rem] rounded-xl focus:outline-none' placeholder='Phone Number' name='phoneNumber' required />
-            <input type="email" className='font-bold border py-[.7rem] px-[1rem] rounded-xl focus:outline-none' placeholder='Email' name='email' required />
+            <input type="email" className='font-bold border py-[.7rem] px-[1rem] rounded-xl focus:outline-none' placeholder='Email' name='email' value={user && user.email} readOnly required />
             <input type="submit" className='bg-accent btn font-bold border py-[.7rem] px-[1rem] rounded-xl focus:outline-none' />
           </form>
         </div>

@@ -12,6 +12,7 @@ const Navbar = () => {
 
   const signoutUser = () => {
     signOut(auth)
+    localStorage.removeItem('access-token')
   }
 
   const navOption = <>
@@ -20,6 +21,7 @@ const Navbar = () => {
   <li><Link to={'/appointment'}>Appointment</Link></li>
   <li><a>Reviews</a></li>
   <li><a>Contact</a></li>
+  <li><Link to={'/dashboard'}>Dashboard</Link></li>
   {
     user ? <li onClick={signoutUser}><a>Logout</a></li> : <li><Link to={'/signin'}>Login</Link></li>
   }
